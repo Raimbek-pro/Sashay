@@ -14,7 +14,6 @@
 		63230CB83000F261004C3D33 /* Exceptions for "Sashay" folder in "Sashay" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				.gitignore,
 				Info.plist,
 				Untitled.swift,
 			);
