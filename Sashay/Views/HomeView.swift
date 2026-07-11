@@ -25,7 +25,11 @@ struct HomeView : View {
             }
             List{
                 ForEach(vm.songs) { song in
-                    SongShow(song: song)
+                    NavigationLink(destination : DetailView(vm: DetailViewModel(id: song.id))){
+                        SongShow(song: song)
+                    }
+                   // .buttonStyle(.plain)
+                   
                         .onAppear {
                             if song.id == vm.songs.last?.id {
                                 Task {
