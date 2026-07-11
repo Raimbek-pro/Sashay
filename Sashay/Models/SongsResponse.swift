@@ -110,3 +110,36 @@ struct Artist: Decodable {
         case isVerified = "is_verified"
     }
 }
+
+
+extension SongResult {
+    static let mock = SongResult(
+        id: 1,
+        title: "Fake Song",
+        fullTitle: "Fake Song - Fake Artist",
+        artistNames: "Fake Artist",
+        primaryArtistNames: "Fake Artist",
+        path: "",
+        url: nil,
+        annotationCount: 0,
+        lyricsOwnerId: 0,
+        lyricsState: "",
+        pyongsCount: nil,
+        pendingLyricsEditsCount: 0,
+        releaseDateForDisplay: nil,
+        releaseDateWithAbbreviatedMonthForDisplay: nil,
+        headerImageThumbnailUrl: nil,
+        headerImageUrl: nil,
+        songArtImageThumbnailUrl: nil,
+        songArtImageUrl: nil,
+        relationshipsIndexUrl: nil,
+        featuredArtists: [],
+        primaryArtist: .mock,
+        primaryArtists: [.mock]
+    )
+}
+
+
+extension Artist {
+   static let mock = Artist(id: 1, name: "", apiPath: "", url: nil, imageUrl: nil, headerImageUrl: nil, isMemeVerified: true, isVerified: true)
+}

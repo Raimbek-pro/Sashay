@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView : View {
-    @State var vm = HomeViewModel()
+    @State var vm = HomeViewModel(songsService: SongsService())
     @State var songName = ""
     var body : some View {
         VStack {

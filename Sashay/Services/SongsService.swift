@@ -7,7 +7,17 @@
 
 import Foundation
 
-class SongsService {
+protocol  SongsServiceProtocol {
+    func getSongs( text : String,  page: Int) async -> Result<SongsResponse , SongsServiceError>
+}
+class MockSongsService  : SongsServiceProtocol{
+    func getSongs(text: String, page: Int) async -> Result<SongsResponse, SongsServiceError> {
+        return .success(SongsResponse(meta: Meta(status: 1), response: ResponseData(hits: [Hit(index: "", type: "", matchedWords: 1, nbExactWords: 1, nbTypos: 1, highlights: [""], result: SongResult.mock)])))
+    }
+    
+   
+}
+class SongsService : SongsServiceProtocol{
      var base = URLComponents(string: "https://api.genius.com/search")
     
     func getSongs( text : String,  page: Int) async -> Result<SongsResponse , SongsServiceError> {

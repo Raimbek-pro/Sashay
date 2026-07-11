@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		63230D703002428C004C3D33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63230C9E3000EDBE004C3D33 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63230CA53000EDBE004C3D33;
+			remoteInfo = Sashay;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		63230CA63000EDBE004C3D33 /* Sashay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sashay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63230D6C3002428C004C3D33 /* SashayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SashayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -30,10 +41,22 @@
 			path = Sashay;
 			sourceTree = "<group>";
 		};
+		63230D6D3002428C004C3D33 /* SashayTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SashayTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		63230CA33000EDBE004C3D33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63230D693002428C004C3D33 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -47,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				63230CA83000EDBE004C3D33 /* Sashay */,
+				63230D6D3002428C004C3D33 /* SashayTests */,
 				63230CA73000EDBE004C3D33 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				63230CA63000EDBE004C3D33 /* Sashay.app */,
+				63230D6C3002428C004C3D33 /* SashayTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,6 +109,29 @@
 			productReference = 63230CA63000EDBE004C3D33 /* Sashay.app */;
 			productType = "com.apple.product-type.application";
 		};
+		63230D6B3002428C004C3D33 /* SashayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63230D723002428C004C3D33 /* Build configuration list for PBXNativeTarget "SashayTests" */;
+			buildPhases = (
+				63230D683002428C004C3D33 /* Sources */,
+				63230D693002428C004C3D33 /* Frameworks */,
+				63230D6A3002428C004C3D33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63230D713002428C004C3D33 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				63230D6D3002428C004C3D33 /* SashayTests */,
+			);
+			name = SashayTests;
+			packageProductDependencies = (
+			);
+			productName = SashayTests;
+			productReference = 63230D6C3002428C004C3D33 /* SashayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -96,6 +144,10 @@
 				TargetAttributes = {
 					63230CA53000EDBE004C3D33 = {
 						CreatedOnToolsVersion = 26.2;
+					};
+					63230D6B3002428C004C3D33 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 63230CA53000EDBE004C3D33;
 					};
 				};
 			};
@@ -114,12 +166,20 @@
 			projectRoot = "";
 			targets = (
 				63230CA53000EDBE004C3D33 /* Sashay */,
+				63230D6B3002428C004C3D33 /* SashayTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		63230CA43000EDBE004C3D33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63230D6A3002428C004C3D33 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -136,7 +196,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		63230D683002428C004C3D33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		63230D713002428C004C3D33 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63230CA53000EDBE004C3D33 /* Sashay */;
+			targetProxy = 63230D703002428C004C3D33 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		63230CAF3000EDC0004C3D33 /* Debug */ = {
@@ -326,6 +401,48 @@
 			};
 			name = Release;
 		};
+		63230D733002428C004C3D33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5BK3H6Y47F;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.raiymbek.SashayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sashay.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Sashay";
+			};
+			name = Debug;
+		};
+		63230D743002428C004C3D33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5BK3H6Y47F;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.raiymbek.SashayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sashay.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Sashay";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -343,6 +460,15 @@
 			buildConfigurations = (
 				63230CB23000EDC0004C3D33 /* Debug */,
 				63230CB33000EDC0004C3D33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63230D723002428C004C3D33 /* Build configuration list for PBXNativeTarget "SashayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63230D733002428C004C3D33 /* Debug */,
+				63230D743002428C004C3D33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

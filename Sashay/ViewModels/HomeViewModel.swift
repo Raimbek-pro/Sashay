@@ -11,7 +11,10 @@ import Foundation
 @Observable
 
 class HomeViewModel {
-    private let songsService = SongsService()
+    private let songsService :SongsServiceProtocol
+    init(songsService : SongsServiceProtocol) {
+        self.songsService = songsService
+    }
    
     var page = 1
     var songs : [Songs] = []
