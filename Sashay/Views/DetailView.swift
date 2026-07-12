@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+import FirebaseAnalytics
+import FirebaseCrashlytics
+
 struct DetailView: View {
    @State var vm : DetailViewModel
     init(vm: DetailViewModel) {
@@ -43,6 +46,13 @@ struct DetailView: View {
 
               }
         }
+        .onAppear {
+            Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+                AnalyticsParameterContentType: "song",
+                AnalyticsParameterItemID: vm.id,
+                AnalyticsParameterItemName: vm.songName
+            ])
+        }
     }
 }
 
@@ -58,5 +68,5 @@ struct ReferentsView : View {
 }
 
 #Preview {
-    DetailView(vm: DetailViewModel(id: 1))
+    DetailView(vm: DetailViewModel(id: 1, songName: "some"))
 }

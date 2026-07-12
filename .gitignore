@@ -1,9 +1,7 @@
 
 # Secrets
 
-keys.swift
 
-Keys.swift
 
 .env
 
@@ -19,3 +17,4 @@ xcuserdata/
 
 *.xcuserstate
 
+GoogleService-Info.plist

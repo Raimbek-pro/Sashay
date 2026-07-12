@@ -1,4 +1,4 @@
-name: iOS CI
+name: iOS CI · Build & Test
 
 on:
   push:
@@ -6,19 +6,37 @@ on:
   pull_request:
     branches: [ main ]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
-    runs-on: macos-latest
+    runs-on: macos-15
+    timeout-minutes: 20
 
     steps:
       - uses: actions/checkout@v4
 
       - name: Select Xcode
-        run: sudo xcode-select -s /Applications/Xcode.app
+        run: sudo xcode-select -s /Applications/Xcode_16.app
+
+      - name: Cache Swift Package Manager
+        uses: actions/cache@v4
+        with:
+          path: ~/Library/Developer/Xcode/DerivedData/**/SourcePackages
+          key: spm-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: |
+            spm-
 
       - name: Build and Test
         run: |
           xcodebuild test \
-          -project Sashay.xcodeproj \
-          -scheme Sashay \
-          -destination 'platform=iOS Simulator,name=iPhone 17 Pro'
+            -project Sashay.xcodeproj \
+            -scheme Sashay \
+            -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
+            -resultBundlePath TestResults \
+            -skipMacroValidation \
+            ONLY_ACTIVE_ARCH=YES \
+            CODE_SIGNING_ALLOWED=NO \
+            | xcpretty && exit ${PIPESTATUS[0]}

@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+import FirebaseAnalytics
+import FirebaseCrashlytics
+
 struct HomeView : View {
     @State var vm = HomeViewModel(songsService: SongsService())
     @State var songName = ""
@@ -17,6 +20,14 @@ struct HomeView : View {
                     .frame(maxWidth: .infinity)
                 Button("Find"){
                     Task{
+                        
+                        Crashlytics.crashlytics().log("User tapped Find with query: \(songName)")
+                        
+                       /** this one does get sent, and shows up in your Analytics dashboard as a "search" event with the search term attached. Purpose: track what people are searching for. **/
+                        Analytics.logEvent(AnalyticsEventSearch, parameters: [
+                            AnalyticsParameterSearchTerm: songName
+                        ])
+                        
                         await vm.search(text: songName)
                     }
                 }
@@ -25,14 +36,21 @@ struct HomeView : View {
             }
             List{
                 ForEach(vm.songs) { song in
-                    NavigationLink(destination : DetailView(vm: DetailViewModel(id: song.id))){
+                    NavigationLink(destination : DetailView(vm: DetailViewModel(id: song.id, songName: song.fullTitle))){
                         SongShow(song: song)
                     }
-                   // .buttonStyle(.plain)
-                   
+                   /** Purpose of analytics log which song someone opened. **/
+//                    .simultaneousGesture(TapGesture().onEnded {
+//                        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+//                            AnalyticsParameterContentType: "song",
+//                            AnalyticsParameterItemID: song.id,
+//                            AnalyticsParameterItemName: song.fullTitle
+//                        ])
+//                    })
                         .onAppear {
                             if song.id == vm.songs.last?.id {
                                 Task {
+                                    Crashlytics.crashlytics().log("Loading more songs, query: \(songName)")
                                     await vm.getSongs(text: songName)
                                     }
                             }
@@ -53,6 +71,12 @@ struct HomeView : View {
 
               }
         }
+        .onAppear {
+                    Analytics.logEvent(AnalyticsEventScreenView, parameters: [
+                        AnalyticsParameterScreenName: "HomeView",
+                        AnalyticsParameterScreenClass: "HomeView"
+                    ])
+                }
         
     }
 }

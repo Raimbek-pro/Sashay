@@ -14,8 +14,10 @@ class DetailViewModel {
     
     private let referentsService = ReferentsService()
     let id : Int
-    init(id : Int){
+    let songName: String
+    init(id : Int , songName : String){
         self.id = id
+        self.songName = songName
     }
     var page = 1
     var referents : [ReferentShow] = []
