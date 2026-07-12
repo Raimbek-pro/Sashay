@@ -11,7 +11,6 @@
 		63E829A43003930000BC1E7B /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 63E829A33003930000BC1E7B /* FirebaseCore */; };
 		63E829A63003930000BC1E7B /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 63E829A53003930000BC1E7B /* FirebaseCrashlytics */; };
 		63E829A83003930000BC1E7B /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 63E829A73003930000BC1E7B /* FirebaseMessaging */; };
-		63E829AF3003B2D300BC1E7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63E829AE3003B2D300BC1E7B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +26,6 @@
 /* Begin PBXFileReference section */
 		63230CA63000EDBE004C3D33 /* Sashay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sashay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63230D6C3002428C004C3D33 /* SashayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SashayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		63E829AE3003B2D300BC1E7B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -86,7 +84,6 @@
 				63230CA83000EDBE004C3D33 /* Sashay */,
 				63230D6D3002428C004C3D33 /* SashayTests */,
 				63230CA73000EDBE004C3D33 /* Products */,
-				63E829AE3003B2D300BC1E7B /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,7 +196,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63E829AF3003B2D300BC1E7B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
